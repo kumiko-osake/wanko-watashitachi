@@ -1,4 +1,4 @@
-const CACHE='wanko-watashitachi-v09-dogcat';
+const CACHE='wanko-watashitachi-v10-letters';
 const FILES=['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './mel-puppy-v02.jpg', './cat-puppy-v08.png', './mel-icon-192-v02.png', './mel-icon-512-v02.png', './mel-cry-v03.webp', './mel-food-v03.webp', './mel-good-v03.webp', './mel-oops-v03.webp', './mel-pee-v03.webp', './mel-pee-v06.webp', './mel-poop-v03.webp', './mel-sleep-v03.webp', './mel-train-v03.webp', './mel-walk-v03.webp', './mel-water-v03.webp'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
